@@ -27,7 +27,7 @@ tmp = *f;
 void selection_sort(int *array, size_t size)
 {
 size_t i, j = 0;
-int min;
+size_t min;
 if (size < 2)
 return;
 while (j < size - 1)
@@ -38,8 +38,11 @@ for (i = j + 1; i < size; i++)
 if (array[i] <  array[min])
 min = i;
 }
+if (j != min)
+{
 swap(&array[min], &array[j]);
 print_array(array, size);
+}
 j++;
 }
 }
