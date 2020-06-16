@@ -20,6 +20,7 @@ tmp = *f;
  * @A: array of integers
  * @lo: the index of the first elt
  * @hi:starting index(last element)
+ * @si: its size
  *
  * Return: i
  */
@@ -49,8 +50,9 @@ return (i);
  * @A: array of integers
  * @lo: the index of the first elt
  * @hi:starting index(last element)
+ * @si: its size
  *
- * Return: void
+ * Return: 0 o n success
  */
 int quicksort(int *A, int lo, int hi, size_t si)
 {
