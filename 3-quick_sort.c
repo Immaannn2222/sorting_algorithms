@@ -24,22 +24,25 @@ tmp = *f;
  * Return: i
  */
 
-int lum_part(int *A, int lo, int hi)
+int lum_part(int *A, int lo, int hi, size_t si)
 {
 int i, j;
 int pivot;
 pivot = A[hi];
 i = lo - 1;
-for (j = lo; j <=  hi - 1; j++)
+for (j = lo; j <= hi; j++)
 {
-if (A[j] < pivot)
+if (A[j] <= pivot)
 {
 i += 1;
+if (i != j)
+{
 swap(&A[i], &A[j]);
+print_array(A, si);
 }
 }
-swap(&A[i + 1], &A[hi]);
-return (i + 1);
+}
+return (i);
 }
 /**
  * quicksort - quicksorts the array
@@ -49,15 +52,14 @@ return (i + 1);
  *
  * Return: void
  */
-int quicksort(int *A, int lo, int hi, size_t size)
+int quicksort(int *A, int lo, int hi, size_t si)
 {
 if (lo < hi)
 {
 int s;
-s = lum_part(A, lo, hi);
-print_array(A, size);
-quicksort(A, lo, s - 1, size);
-quicksort(A, s + 1, hi, size);
+s = lum_part(A, lo, hi, si);
+quicksort(A, lo, s - 1, si);
+quicksort(A, s + 1, hi, si);
 }
 return (0);
 }
@@ -72,6 +74,8 @@ return (0);
 
 void quick_sort(int *array, size_t size)
 {
+if (size < 2)
+return;
 quicksort(array, 0, size - 1, size);
 }
 
