@@ -31,7 +31,7 @@ void counting_sort(int *array, size_t size)
 {
 size_t i;
 int max, j = 0, x, *occu, *output;
-if (size < 2 || !array)
+if (!array || size < 2)
 return;
 max = max_array(array, size);
 occu = malloc(sizeof(int) * (max + 1));
