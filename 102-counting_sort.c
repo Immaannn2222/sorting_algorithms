@@ -30,14 +30,15 @@ return (max);
 void counting_sort(int *array, size_t size)
 {
 size_t i;
-int max, j = 0, x, *occu, *output;
+int max, j, x, *occu, *output;
 if (!array || size < 2)
 return;
 max = max_array(array, size);
 occu = malloc(sizeof(int) * (max + 1));
 if (!occu)
 return;
-i = 0;
+for (j = 0; j <= max; j++)
+occu[j] = 0;
 for (i = 0; i < size; i++)
 {
 j = array[i];
@@ -64,9 +65,7 @@ output[x] = array[i];
 }
 }
 for (i = 0; i < size; i++)
-{
 array[i] = output[i];
-}
 free(output);
 free(occu);
 }
