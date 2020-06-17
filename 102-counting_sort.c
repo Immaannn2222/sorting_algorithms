@@ -44,7 +44,7 @@ for (i = 0; i < size; i++)
 j = array[i];
 occu[j] += 1;
 }
-for (j = 1; j <= max; j++)
+for (j = 0; j <= max; j++)
 {
 occu[j] += occu[j - 1];
 }
