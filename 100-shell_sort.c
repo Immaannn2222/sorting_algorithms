@@ -35,7 +35,7 @@ gap = gap * 3 + 1;
 }
 while (gap >= 1)
 {
-for (i = 0; i < size; i++)
+for (i = 0; i < size - 1; i++)
 {
 for (j = i; j < size; j += gap)
 {
