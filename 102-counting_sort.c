@@ -61,6 +61,7 @@ for (j = 0; j <= max; j++)
 if (array[i] == j)
 {
 x = occu[j] - 1;
+occu[j] -= 1;
 output[x] = array[i];
 }
 }
